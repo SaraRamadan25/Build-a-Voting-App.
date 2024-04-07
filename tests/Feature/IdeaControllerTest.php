@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Idea;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -37,12 +38,14 @@ class IdeaControllerTest extends TestCase
     /** @test */
     public function single_idea_shows_correctly_on_the_show_page()
     {
+        $user = User::factory()->create();
         $idea = Idea::factory()->create([
             'title' => 'My First Idea',
             'description' => 'Description of my first idea',
+            'user_id' => $user->id,
         ]);
 
-        $response = $this->get(route('idea.show', $idea));
+        $response = $this->get(route('ideas.show', $idea->id));
 
         $response->assertSuccessful();
         $response->assertSee($idea->title);

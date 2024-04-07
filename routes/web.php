@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
 Route::get('/', [IdeaController::class, 'index'])->name('ideas.index');
-Route::get('/ideas/{idea}', [App\Http\Controllers\IdeaController::class, 'show'])->name('idea.show');
+Route::get('/ideas/{idea}', [IdeaController::class, 'show'])->name('ideas.show');
 require __DIR__.'/auth.php';

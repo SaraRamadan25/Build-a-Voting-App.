@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-    </div> <!-- end idea-container -->
+    </div> <!-- end ideas-container -->
 
     <div class="buttons-container flex items-center justify-between mt-6">
         <div class="flex flex-col md:flex-row items-center space-x-4 md:ml-6">
