@@ -45,7 +45,7 @@ class IdeaControllerTest extends TestCase
             'user_id' => $user->id,
         ]);
 
-        $response = $this->get(route('ideas.show', $idea->id));
+        $response = $this->get(route('ideas.show', $idea));
 
         $response->assertSuccessful();
         $response->assertSee($idea->title);
