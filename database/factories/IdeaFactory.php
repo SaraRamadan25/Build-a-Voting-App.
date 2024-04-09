@@ -21,6 +21,7 @@ class IdeaFactory extends Factory
             'title' => ucwords($this->faker->words(4, true)),
             'description' => $this->faker->paragraph(4),
             'user_id' => User::factory(),
+            'category_id' => $this->faker->numberBetween(1, 4),
         ];
     }
 }
